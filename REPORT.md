@@ -6,6 +6,28 @@
 
 ### Задание 1.1. Настройка и первый коммит
 
+Проверка настроек окружения:
+
+```bash
+git config --global --get user.name
+git config --global --get user.email
+git config --global --get init.defaultBranch
+git --version
+docker --version
+```
+
+
+Вывод:
+
+```
+Adis Zarylbekov
+zarylbekov_a@iuca.kg
+main
+git version 2.53.0
+Docker version 29.1.3, build 29.1.3-0ubuntu4.1
+```
+
+
 Команды:
 
 ```bash
