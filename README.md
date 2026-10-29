@@ -5,7 +5,7 @@
 <!-- Допишите сюда -->
 Учебный инфраструктурный репозиторий: Docker и Ansible.
 README updated through GitHub web interface.
-## Docker Web Page
+## Запуск в Docker
 
 The project includes a personalized Nginx web page.
 
