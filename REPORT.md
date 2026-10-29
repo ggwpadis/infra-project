@@ -165,20 +165,25 @@ Pull Request #2 успешно объединён в main, ветка удале
 Последний коммит был заменён новым коммитом с исправленным сообщением.
 Команда amend использовалась до отправки этих коммитов на GitHub.
 
+
 ## Задание 5.3. git revert
 
 Команды:
-- `echo "This change will be reverted" > revert-demo.txt`
-- `git add revert-demo.txt`
-- `git commit -m "test: add revert demo file"`
-- `git revert --no-edit 4d09a8c`
-- `git log -4 --oneline`
-- `ls revert-demo.txt`
+- `sed -i '/^\*\.log$/d' .gitignore`
+- `git add .gitignore`
+- `git commit -m "chore: remove log files from gitignore"`
+- `git push origin main`
+- `git revert 78b0cb3`
+- `git push origin main`
+- `cat .gitignore`
+- `git log --oneline -5`
 
 Результат:
-Команда git revert создала коммит abc3ab2, отменивший изменения
-коммита 4d09a8c. Файл revert-demo.txt был удалён.
-При этом исходный коммит остался в истории.
+Коммит 78b0cb3 удалил строку *.log из .gitignore и был отправлен на сервер.
+Затем команда git revert создала коммит 8013f4a, отменивший это изменение.
+Строка *.log вернулась в .gitignore, а оба коммита остались в истории.
+Для опубликованного коммита используется git revert, потому что он отменяет
+изменения новым коммитом, не переписывая общую историю репозитория.
 
 
 
