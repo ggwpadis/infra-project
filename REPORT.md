@@ -137,20 +137,20 @@ Docker-образ успешно собран, контейнер запущен
 Инструкции по запуску добавлены в README.md.
 Pull Request #2 успешно объединён в main, ветка удалена.
 
+
 ## Задание 5.1. git restore
 
 Команды:
-- `echo "Original text" > restore-demo.txt`
-- `git add restore-demo.txt`
-- `git commit -m "test: add restore demo file"`
-- `echo "Modified text" > restore-demo.txt`
-- `git diff`
-- `git restore restore-demo.txt`
-- `cat restore-demo.txt`
+- `echo "# temporary test line" >> docker/Dockerfile`
+- `git diff -- docker/Dockerfile`
+- `git restore docker/Dockerfile`
+- `git diff -- docker/Dockerfile`
 
 Результат:
-После изменения файла git restore вернул содержимое
-к версии последнего коммита: Original text.
+В Dockerfile была добавлена временная строка, которая появилась в выводе git diff.
+Команда git restore docker/Dockerfile отменила незакоммиченное изменение.
+Повторный git diff ничего не вывел, значит файл вернулся к состоянию последнего коммита.
+
 
 ## Задание 5.2. git commit --amend
 
